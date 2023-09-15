@@ -9,6 +9,18 @@ window.onload = function () {
 }
 // end preloader
 
+
+let buttons = document.querySelectorAll('.botton-box');
+buttons.forEach((el) =>{
+    for (let i = 1; i <= 4; i++) {
+	let span = document.createElement('span');
+	el.appendChild(span);
+}
+});
+
+
+
+
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 gsap.to('.offer__title h2', {
@@ -21,7 +33,7 @@ gsap.to('.offer__decor', {
     duration: 40,
     scale:1.6,
 });
-gsap.to('.botton-box', {
+gsap.to('.offer__btn', {
     opacity: 1,
     scale:1,
     delay: 1.2,
@@ -45,7 +57,7 @@ gsap.fromTo('.offer__img', { x:0 }, {
         scrub: true
     }
 });
-gsap.fromTo('.botton-box', { opacity:1 }, {
+gsap.fromTo('.offer__btn', { opacity:1 }, {
     opacity:0,
     scrollTrigger: {
         trigger: '.offer',

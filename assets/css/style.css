@@ -12,8 +12,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    min-height: 1500px;
     color: #7DC1FF;
+    box-sizing: border-box;
+}
+*{
+    box-sizing: border-box;
 }
 
 /* start end preloader */
@@ -25,9 +28,9 @@ body {
     bottom: 0;
     background: #e0e0e0;
     z-index: 1001;
-  }
-  
-  .preloader__row {
+}
+
+.preloader__row {
     position: relative;
     top: 50%;
     left: 50%;
@@ -37,9 +40,9 @@ body {
     margin-left: -35px;
     text-align: center;
     animation: preloader-rotate 2s infinite linear;
-  }
-  
-  .preloader__item {
+}
+
+.preloader__item {
     position: absolute;
     display: inline-block;
     top: 0;
@@ -48,49 +51,50 @@ body {
     width: 35px;
     height: 35px;
     animation: preloader-bounce 2s infinite ease-in-out;
-  }
-  
-  .preloader__item:last-child {
+}
+
+.preloader__item:last-child {
     top: auto;
     bottom: 0;
     animation-delay: -1s;
-  }
-  
-  @keyframes preloader-rotate {
+}
+
+@keyframes preloader-rotate {
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
-  @keyframes preloader-bounce {
-  
+}
+
+@keyframes preloader-bounce {
+
     0%,
     100% {
-      transform: scale(0);
+        transform: scale(0);
     }
-  
+
     50% {
-      transform: scale(1);
+        transform: scale(1);
     }
-  }
-  
-  .loaded_hiding .preloader {
+}
+
+.loaded_hiding .preloader {
     transition: 0.3s opacity;
     opacity: 0;
-  }
-  
-  .loaded .preloader {
+}
+
+.loaded .preloader {
     display: none;
-  }
+}
+
 /* end preloader */
 
-a{
+a {
     text-decoration: none;
     color: inherit;
     font-family: inherit;
 }
 
-ul > li > a{
+ul>li>a {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -170,9 +174,13 @@ ul > li > a{
     overflow: hidden;
     transition: .5s;
     margin-bottom: auto;
-    transform: translateY(-10vh) scale(0);
     letter-spacing: 4px;
+    opacity: 1;
+}
+
+.offer__btn{
     opacity: 0;
+    transform: translateY(-10vh) scale(0);
 }
 
 .botton-box:hover {
@@ -449,27 +457,73 @@ ul > li > a{
 }
 
 #menuButton:checked,
-#menuButton:checked + .menu-button-label .white-bar,
-#menuButton:checked + .menu-button-label .white-bar:nth-child(1),
-#menuButton:checked + .menu-button-label .white-bar:nth-child(4) {
+#menuButton:checked+.menu-button-label .white-bar,
+#menuButton:checked+.menu-button-label .white-bar:nth-child(1),
+#menuButton:checked+.menu-button-label .white-bar:nth-child(4) {
     width: 0%;
 }
 
-#menuButton:checked + .menu-button-label .white-bar:nth-child(2) {
+#menuButton:checked+.menu-button-label .white-bar:nth-child(2) {
     transform: translateX(-50%) rotate(45deg);
     width: 100%;
 }
 
-#menuButton:checked + .menu-button-label .white-bar:nth-child(3) {
+#menuButton:checked+.menu-button-label .white-bar:nth-child(3) {
     transform: translateX(-50%) rotate(-45deg);
     width: 100%;
 
 }
 
-.rela-block{
+.rela-block {
     display: block;
     position: relative;
     overflow: hidden;
 }
 
-    
+.works__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+.works__item {
+    position: relative;
+    height: 350px;
+    border: 1px solid #7DC1FF;
+    -webkit-box-shadow: 2px 0px 36px 10px rgba(125, 193, 255, 0.3);
+    -moz-box-shadow: 2px 0px 36px 10px rgba(125, 193, 255, 0.3);
+    box-shadow: 2px 0px 36px 10px rgba(125, 193, 255, 0.3);
+    overflow: hidden;
+}
+.works__item-info{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    position: absolute;
+    padding: 30px 40px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    transform: translateY(100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.works__item:hover .works__item-info{
+    transform: translateY(0%);
+}
+.works__btn{
+    margin-top: auto;
+}
+.works__item > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
